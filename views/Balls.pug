@@ -7,7 +7,11 @@ block content
   div(class="container-fluid")
     div(class="row")
       each f,index in results 
-        div(class="col-sm-2") #{f.ball_type}, #{f.cost}, #{f.material}
+        div(class="col-sm-2",onclick=`buy(${index})`) #{f.ball_type}, #{f.cost}, #{f.material}
+        script. 
+          function buy(index){
+            alert(`you purchased Item: ${index+1}`)
+          }
         
      
 
